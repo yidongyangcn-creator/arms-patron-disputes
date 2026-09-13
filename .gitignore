@@ -1,0 +1,26 @@
+# ---- Third-party data, not redistributed -----------------------------------
+data/raw/*
+!data/raw/.gitkeep
+
+# ---- Python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+
+# ---- LaTeX -----------------------------------------------------------------
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# ---- OS / editors ----------------------------------------------------------
+.DS_Store
+.Rproj.user/
+.Rhistory
+.RData

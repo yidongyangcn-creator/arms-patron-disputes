@@ -1,0 +1,12 @@
+{
+  "sipri_deal_rows": 29916,
+  "sipri_mapped_flows": 22914,
+  "sipri_unmapped_names": 707,
+  "mid_dyad_pairs": 1046,
+  "mid_onsets_1990_2014": 689,
+  "onsets_with_overlap_data": 401,
+  "panel_rows": 133702,
+  "panel_onset_rate": 0.005153251260265366,
+  "cinc_coverage": 0.9937996439843831,
+  "regime_coverage": 0.9744730819284678
+}

@@ -1,0 +1,20 @@
+ccode1,ccode2,years,onsets,predicted,patron_share_yrs,residual,dyad,role,absres,selected
+645.0,652.0,45,7,2.29,0.73,4.71,IRQ-SYR,off-the-line,,CASE A
+350.0,640.0,59,8,3.96,0.58,4.04,GRC-TUR,off-the-line,,shadow
+732.0,740.0,24,4,1.33,1.0,2.67,ROK-JPN,off-the-line,,
+91.0,92.0,44,5,2.57,0.66,2.43,HON-SAL,off-the-line,,
+90.0,200.0,54,3,0.89,0.65,2.11,GUA-UKG,off-the-line,,
+910.0,940.0,8,2,0.2,0.62,1.8,PNG-SOL,off-the-line,,
+645.0,651.0,4,2,0.2,0.5,1.8,IRQ-EGY,off-the-line,,
+703.0,704.0,4,1,0.24,1.0,0.76,KYR-UZB,off-the-line,,
+200.0,230.0,59,3,2.25,0.68,0.75,UKG-SPN,off-the-line,,
+645.0,740.0,14,1,0.29,0.5,0.71,IRQ-JPN,off-the-line,,
+92.0,740.0,24,0,0.03,0.96,-0.03,SAL-JPN,on-the-line,0.03,
+666.0,740.0,24,0,0.04,1.0,-0.04,ISR-JPN,on-the-line,0.04,
+200.0,732.0,24,0,0.04,1.0,-0.04,UKG-ROK,on-the-line,0.04,
+692.0,740.0,24,0,0.04,0.92,-0.04,BAH-JPN,on-the-line,0.04,
+200.0,740.0,58,0,0.26,0.98,-0.26,UKG-JPN,on-the-line,0.26,
+290.0,315.0,28,0,0.92,1.0,-0.92,POL-CZE,on-the-line,0.92,
+310.0,315.0,30,0,1.08,1.0,-1.08,HUN-CZE,on-the-line,1.08,
+732.0,740.0,24,4,1.33,1.0,2.67,ROK-JPN,on-the-line,2.67,
+,,58,1,1.43,0.64,-0.43,HUN-ROM,on-the-line,,CASE B
