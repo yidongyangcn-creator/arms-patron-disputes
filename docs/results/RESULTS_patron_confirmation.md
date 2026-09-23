@@ -1,5 +1,8 @@
 # Confirmatory test: the shared-patron effect, Cold War era
 
+*Correction, Aug 11: the Camp David paragraph below is superseded. MID 5.0 records seven Egypt–Israel onsets after 1979; Egypt–Israel is treated as a boundary case, not the mechanism case. See PROJECT_MEMO.md §1 and RESULTS_case_memo_verification.md.*
+
+
 *The shared-patron hypothesis was generated in the post-1990 MENA sample. Here it is tested out-of-sample: global politically-relevant dyads, 1955–1989 — the era of maximal patron structure. Panel extended to 1955–2014 (77,542 dyad-years, 1,109 onsets). Primary test declared before running. Full controls + peace-years, dyad-clustered SEs, both-importer dyads.*
 
 ## Results
