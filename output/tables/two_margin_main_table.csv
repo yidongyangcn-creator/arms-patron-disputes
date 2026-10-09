@@ -1,7 +1,7 @@
 margin,sample,measure,OR,p,N,events
-onset,onset CW: shared dominant patron,sd_w5,0.661,0.005,24349,434
-onset,onset post-90: shared dominant patron,sd_w5,0.835,0.368,28654,334
-onset,onset CW: same top supplier,same_top5,0.704,0.01,24349,434
-onset,onset post-90: shared US patron,shared_us_w5,0.439,0.04,28654,334
-escalation,escalation: war | dispute,sd_w5,0.65,0.43,1473,53
-escalation,escalation: fatality | dispute,sd_w5,0.804,0.342,1368,297
+onset,onset CW: shared dominant patron,sd_w5,0.711,0.014,24376,434
+onset,onset post-90: shared dominant patron,sd_w5,0.96,0.846,28655,334
+onset,onset CW: same top supplier,same_top5,0.684,0.006,24376,434
+onset,onset post-90: shared US patron,shared_us_w5,0.479,0.071,28655,334
+escalation,escalation: war | dispute,sd_w5,0.354,0.144,1473,53
+escalation,escalation: fatality | dispute,sd_w5,0.925,0.75,1368,297

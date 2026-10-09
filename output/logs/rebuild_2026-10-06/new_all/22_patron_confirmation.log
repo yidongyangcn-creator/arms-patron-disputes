@@ -1,0 +1,14 @@
+PANEL 1955-2014: 77542 rows, 1109 onsets | ColdWar 33918/587 | Post 43624/522
+
+=== PRIMARY (declared): shared dominant patron, Cold War 1955-89, both-importers ===
+PRIMARY: shared dominant patron (CW)                       N= 22084 on= 431  OR=0.664 p=0.008
+
+=== SECONDARY ===
+  Cold War: shared US patron                               N= 22084 on= 431  OR=0.651 p=0.028
+  Cold War: shared SOVIET patron                           N= 22084 on= 431  OR=0.705 p=0.343
+  Cold War: generic overlap gradient                       N= 22084 on= 431  OR=0.532 p=0.002
+  Post-90: shared dominant patron                          N= 20222 on= 267  OR=1.020 p=0.924
+  Post-90: shared US patron                                N= 20222 on= 267  OR=0.672 p=0.266
+
+Pooled interaction shared_dominant x ColdWar: OR=0.686 p=0.122
+  (main effect post-90: OR=0.990 p=0.962)

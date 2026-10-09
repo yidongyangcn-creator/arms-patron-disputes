@@ -15,8 +15,17 @@ OV={'United States':2,'Russia':365,'Turkey':640,'Vietnam':816,'Congo (Kinshasa)'
  'Congo (Brazzaville)':484,"Cote d'Ivoire":437,'Czechia':316,'North Macedonia':343,
  'Bosnia and Herzegovina':346,'Cabo Verde':402,'Timor-Leste':860,'Eswatini':572,
  'Germany':255,'Yemen':679,'Korea, South':732,'Korea, Republic of':732,'South Korea':732,
- 'Burma':775,'Burma (Myanmar)':775,'Egypt':651,'Israel':666,'Iran':630,'Iraq':645,'Syria':652}
+ 'Burma':775,'Burma (Myanmar)':775,'Egypt':651,'Israel':666,'Iran':630,'Iraq':645,'Syria':652,
+ # added 2026-10: these were silently dropped by dropna() below (8.5% of all aid, incl. Taiwan $29bn)
+ 'China (Taiwan)':713,'China (P.R.C.)':710,'Serbia and Montenegro, Former':345,'Bosnia & Herzegovina':346,
+ 'Bahamas, The':31,'Antigua and Barbuda':58,'Trinidad & Tobago':52,'St. Vincent and Grenadines':57,
+ 'Gambia, The':420,'Sao Tome & Principe':403,'Micronesia (Federated States of)':987,'Korea, North':731}
 aid['ccode']=aid.country.map(lambda n: OV.get(str(n).strip(),name2cc.get(str(n).strip())))
+# Germany before unification is the FRG (COW 260), as in sipri_cow_crosswalk.csv
+aid.loc[(aid.ccode==255)&(aid.year<=1989),'ccode']=260
+# regional aggregates have no country; anything else unmatched halts
+_un=aid[aid.ccode.isna() & ~aid.country.astype(str).str.contains(r"not specified|West Bank|Hong Kong")]
+if len(_un): raise SystemExit("Unmapped Greenbook countries:\n"+_un.groupby('country').oblig_const.sum().to_string())
 aid=aid.dropna(subset=['ccode']); aid['ccode']=aid.ccode.astype(int)
 A={(int(c),int(y)):v for c,y,v in zip(aid.ccode,aid.year,aid.oblig_const)}
 def aid5(c,t): return sum(A.get((c,y),0.0) for y in range(t-5,t))

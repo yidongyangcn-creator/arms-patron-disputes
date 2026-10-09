@@ -1,0 +1,32 @@
+sipri_name,ccode,action,yr_from,yr_to,note
+United States,2,map,,,COW: United States of America
+Soviet Union,365,map,,,COW codes the USSR as Russia
+Turkiye,640,map,,,COW: Turkey
+Viet Nam,816,map,,,COW: Vietnam
+South Vietnam,817,map,,,COW: Republic of Vietnam
+DR Congo,490,map,,,COW: Democratic Republic of the Congo
+Cote d'Ivoire,437,map,,,COW: Ivory Coast
+Czechia,316,map,,,COW: Czech Republic
+North Macedonia,343,map,,,COW: Macedonia
+Bosnia-Herzegovina,346,map,,,COW: Bosnia and Herzegovina
+Cabo Verde,402,map,,,COW: Cape Verde
+Timor-Leste,860,map,,,COW: East Timor
+eSwatini,572,map,,,COW: Swaziland
+East Germany (GDR),265,map,,,COW: German Democratic Republic
+North Yemen,678,map,,,COW: Yemen Arab Republic
+Yemen Arab Republic (North Yemen),678,map,,,Second SIPRI spelling of the same entity
+South Yemen,680,map,,,COW: Yemen People's Republic
+Antigua and Barbuda,58,map,,,COW: Antigua & Barbuda
+Saint Kitts and Nevis,60,map,,,COW: St. Kitts and Nevis
+Saint Vincent,57,map,,,COW: St. Vincent and the Grenadines
+UAE,696,map,,,"Added 2026-10. Filtered SIPRI exports write UAE; global exports write it in full. Found by audit, not by inspection."
+Germany,260,map,1950,1989,"Added 2026-10. SIPRI writes 'Germany' for the FRG before unification; COW codes it 260 (German Federal Republic, 1955-1990). Exact match had sent it to 255, so the FRG had no imports in any Cold War panel. Found by the membership check."
+Germany,255,map,1990,,"Unified Germany. 1990 deliveries go to 255 so the t-1 lag for 255 in 1991 is populated; 260 in 1990 uses its 1989 lag."
+Aruba,,drop,,,No COW code (non-sovereign territory)
+Biafra,,drop,,,No COW code (secession not recognised)
+Katanga,,drop,,,No COW code (secession not recognised)
+Northern Cyprus,,drop,,,No COW code; folding into Cyprus would assign the wrong regime
+Palestine,,drop,,,No COW code
+Western Sahara,,drop,,,No COW code
+unknown recipient(s),,drop,,,SIPRI uncertainty marker
+unknown supplier(s),,drop,,,SIPRI uncertainty marker

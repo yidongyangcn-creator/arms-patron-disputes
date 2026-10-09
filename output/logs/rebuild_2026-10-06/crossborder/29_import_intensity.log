@@ -1,0 +1,27 @@
+intensity thresholds: p10=0.0014, p25=0.0058, median=0.0350
+  Japan   intensity 1975=0.0362  2005=0.0022
+  ROK     intensity 1975=0.8840  2005=0.0154
+  Taiwan  intensity 1975=0.3209  2005=0.0356
+  China   intensity 1975=0.0000  2005=0.0340
+  Egypt   intensity 1975=0.6450  2005=0.1354
+  Iraq    intensity 1975=1.1425  2005=nan
+  Israel  intensity 1975=0.5444  2005=0.0195
+
+=== shared dominant patron, import-dependent both sides (p10 cut) ===
+  CW primary                                               N= 21104 ev= 369  OR=0.674 p=0.023
+  CW primary, originator-only                              N= 21104 ev= 314  OR=0.698 p=0.054
+  post-1990                                                N= 24376 ev= 270  OR=0.915 p=0.698
+  full 1955-2014                                           N= 45480 ev= 639  OR=0.748 p=0.059
+  Asia-Pacific, full period                                N=  2640 ev= 107  OR=1.840 p=0.002
+
+=== shared dominant patron, import-dependent both sides (p25 cut) ===
+  CW primary                                               N= 21104 ev= 369  OR=0.694 p=0.039
+  CW primary, originator-only                              N= 21104 ev= 314  OR=0.718 p=0.080
+  post-1990                                                N= 24376 ev= 270  OR=1.075 p=0.750
+  full 1955-2014                                           N= 45480 ev= 639  OR=0.807 p=0.147
+  Asia-Pacific, full period                                N=  2640 ev= 107  OR=1.805 p=0.001
+
+=== comparison: unconditioned sd_w5 ===
+  CW primary                                               N= 23952 ev= 433  OR=0.651 p=0.006
+  Asia-Pacific, full period                                N=  3197 ev= 127  OR=1.385 p=0.133
+panel updated: imp_int_i/j, dep10/25, sd_w5_int10/25

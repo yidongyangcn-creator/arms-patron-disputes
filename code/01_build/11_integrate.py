@@ -10,7 +10,7 @@ Outputs written to OUT dir.
 import pandas as pd, numpy as np, io, json, os, itertools
 from collections import defaultdict
 
-OUT=BASE+"/build"
+OUT=str(DERIVED)          # was BASE+"/build"; BASE was never defined after the _paths refactor
 os.makedirs(OUT, exist_ok=True)
 YEARS=list(range(1990,2015))   # modelling window (MID 5.0 ends 2014)
 
@@ -21,45 +21,29 @@ sl=pd.read_csv(f"{REFERENCE}/statelist2024.csv")
 name2ccode={str(n).strip():int(c) for n,c in zip(sl.statenme,sl.ccode)}
 ccode2abb={int(c):a for c,a in zip(sl.ccode,sl.stateabb)}
 
-SIPRI_OVERRIDE={
- 'United States':2,'Soviet Union':365,'Turkiye':640,'Viet Nam':816,
- 'South Vietnam':817,'DR Congo':490,"Cote d'Ivoire":437,'Czechia':316,
- 'North Macedonia':343,'Bosnia-Herzegovina':346,'Cabo Verde':402,
- 'Timor-Leste':860,'eSwatini':572,'East Germany (GDR)':265,
- 'North Yemen':678,'Yemen Arab Republic (North Yemen)':678,'South Yemen':680,
- 'Antigua and Barbuda':58,'Saint Kitts and Nevis':60,'Saint Vincent':57,
-}
-DROP_NONCOW={'Aruba','Biafra','Katanga','Northern Cyprus','Palestine',
- 'Western Sahara','unknown recipient(s)','unknown supplier(s)'}
-def sipri2ccode(n):
-    if pd.isna(n) or n in DROP_NONCOW or '*' in str(n): return None
-    n=str(n).strip()
-    if n in SIPRI_OVERRIDE: return SIPRI_OVERRIDE[n]
-    return name2ccode.get(n)
+# SIPRI name mapping moved to 10_sipri_ingest.py + data/reference/sipri_cow_crosswalk.csv.
+# The statelist maps above are still used below for state abbreviations.
 
 # ----------------------------------------------------------------------
-# 2) SIPRI REGISTER -> bilateral TIV by delivery year -> overlap
+# 2) SIPRI FLOWS — audited by 10_sipri_ingest.py, which must run first
 # ----------------------------------------------------------------------
-lines=open(f"{RAW}/trade-register.csv",encoding="utf-8",errors="replace").readlines()
-hi=[i for i,l in enumerate(lines) if l.startswith("Recipient,Supplier")][0]
-reg=pd.read_csv(io.StringIO("".join(lines[hi:])))
-reg.columns=[c.strip() for c in reg.columns]
-reg=reg.rename(columns={'SIPRI TIV of delivered weapons':'tiv',
-                        'Year(s) of delivery':'dyears'})
-reg['rec_cc']=reg.Recipient.map(sipri2ccode)
-reg['sup_cc']=reg.Supplier.map(sipri2ccode)
-reg['tiv']=pd.to_numeric(reg['tiv'],errors='coerce')
-# expand multi-year deliveries ("2012; 2013; 2016")
-reg2=reg.dropna(subset=['rec_cc','sup_cc']).copy()
-reg2['dyears']=reg2['dyears'].astype(str)
-reg2=reg2.assign(yr=reg2['dyears'].str.split(';')).explode('yr')
-reg2['yr']=pd.to_numeric(reg2['yr'],errors='coerce')
-reg2=reg2.dropna(subset=['yr'])
-reg2['yr']=reg2['yr'].astype(int)
-reg2['rec_cc']=reg2['rec_cc'].astype(int); reg2['sup_cc']=reg2['sup_cc'].astype(int)
-reg2=reg2[(reg2.tiv>0)&(reg2.rec_cc!=reg2.sup_cc)]
-# annual recipient<-supplier TIV
-flow=(reg2.groupby(['rec_cc','sup_cc','yr'],as_index=False)['tiv'].sum())
+# The inline parsing that used to sit here had three defects, all fixed upstream:
+#   (a) multi-year deliveries carried the full deal TIV on every year (3.42x on MENA);
+#   (b) licensed / local production counted as a cross-border transfer;
+#   (c) unmatched names were dropped by dropna() with no warning.
+# `tiv` in this file is CROSS-BORDER ONLY. Licensed production is in
+# bilateral_tiv_by_year_full.csv and licensed_share_by_recipient_year.csv.
+_audit_path=f"{DERIVED}/sipri_ingest_audit.json"
+if not os.path.exists(_audit_path):
+    raise SystemExit("Run code/01_build/10_sipri_ingest.py first.")
+ingest=json.load(open(_audit_path))
+if ingest["schema"]!="NEW":
+    print("\n" + "!"*78 + "\nWARNING: flows were built from the OLD per-deal SIPRI export. TIV is split"
+          "\nevenly across delivery years and licensed production is NOT removed."
+          "\nDo not report results from this build.\n" + "!"*78 + "\n")
+flow=pd.read_csv(f"{DERIVED}/bilateral_tiv_by_year.csv")
+assert set(flow.columns)>={'rec_cc','sup_cc','yr','tiv'}, flow.columns
+assert (flow.tiv>0).all() and (flow.rec_cc!=flow.sup_cc).all()
 
 def overlap_year(yr):
     """return dict {(i,j):overlap} for recipients active in yr (L1 share similarity)."""
@@ -187,6 +171,9 @@ for y in YEARS:
         in_mid=1 if (i,j) in mids else 0
         ovl=ov_lag.get((i,j),0.0)
         # keep row only if politically relevant: importer-overlap computable OR mid present
+        # NOTE: this retention rule admits non-importing pairs only in conflict years,
+        # i.e. it selects on the outcome. Do not estimate from dyad_year_panel_1990_2014.csv;
+        # use the panels built by 12_clean_panel.py.
         both_imp= i in imp_lag and j in imp_lag
         if not (both_imp or in_mid or onset): continue
         panel.append(dict(year=y,ccode1=i,ccode2=j,
@@ -204,7 +191,7 @@ panel['regime_dist']=(panel.polyarchy1-panel.polyarchy2).abs()
 panel.to_csv(f"{OUT}/dyad_year_panel_1990_2014.csv",index=False)
 
 # overlap full matrix (long) for all years, for the R pipeline
-flow.to_csv(f"{OUT}/bilateral_tiv_by_year.csv",index=False)
+# (bilateral_tiv_by_year.csv is now written by 10_sipri_ingest.py, not here)
 ovlong=[]
 for y,ov in overlap_by_year.items():
     for (i,j),v in ov.items(): ovlong.append((y,i,j,v))
@@ -213,8 +200,9 @@ pd.DataFrame(ovlong,columns=['year','ccode1','ccode2','overlap']).to_csv(
 
 # summary json
 summary=dict(
-  sipri_deal_rows=int(len(reg)), sipri_mapped_flows=int(len(flow)),
-  sipri_unmapped_names=int(reg.rec_cc.isna().sum()+reg.sup_cc.isna().sum()),
+  sipri_schema=ingest["schema"], sipri_rows_read=ingest["rows_read"],
+  sipri_mapped_flows=int(len(flow)), sipri_unmatched_names=ingest["unmatched"],
+  sipri_tiv_crossborder=ingest["tiv_crossborder"], sipri_tiv_local=ingest["tiv_local"],
   mid_dyad_pairs=int(len(dy)),
   mid_onsets_1990_2014=int(ov_df.onset_dyads.sum()),
   onsets_with_overlap_data=int(ov_df.onset_with_overlap_data.sum() if 'onset_with_overlap_data' in ov_df else ov_df.onset_dyads.sum()),

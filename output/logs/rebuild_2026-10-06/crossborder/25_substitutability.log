@@ -1,0 +1,26 @@
+VALIDATION — Iraq's outside options (suppliers >5% besides top):
+  1965: outside=1  top3=[(365, 0.83), (200, 0.17)]
+  1970: outside=2  top3=[(365, 0.85), (220, 0.07), (315, 0.06)]
+  1974: outside=0  top3=[(365, 0.98), (220, 0.02), (200, 0.0)]
+  1978: outside=0  top3=[(365, 0.9), (220, 0.05), (315, 0.03)]
+  1982: outside=1  top3=[(365, 0.71), (220, 0.15), (710, 0.04)]
+  1986: outside=2  top3=[(365, 0.55), (220, 0.19), (710, 0.18)]
+  1990: outside=2  top3=[(365, 0.67), (710, 0.18), (220, 0.07)]
+
+locked share (both no alternative >5%): CW=14.2%, full=12.3%
+
+=== LOCKED-DYAD TEST (the substitutability hypothesis) ===
+S1 Cold War: sd_w5 x locked                              N= 23952 ev= 433 | sd_w5: OR=0.713 p=0.042 | locked: OR=0.703 p=0.053 | sd_w5:locked: OR=0.826 p=0.578
+     -> patron effect when LOCKED:   OR=0.589
+     -> patron effect with options:  OR=0.713
+S2 Cold War: among locked dyads only                     N=  2739 ev=  41 | sd_w5: OR=0.961 p=0.933
+S3 Cold War: among dyads with options                    N= 21213 ev= 392 | sd_w5: OR=0.702 p=0.032
+S4 Cold War: + continuous outside options                N= 23952 ev= 433 | sd_w5: OR=0.722 p=0.038 | out_min: OR=1.240 p=0.001
+S1 Full 1955-2014: sd_w5 x locked                        N= 52430 ev= 762 | sd_w5: OR=0.764 p=0.064 | locked: OR=0.835 p=0.201 | sd_w5:locked: OR=0.793 p=0.396
+     -> patron effect when LOCKED:   OR=0.606
+     -> patron effect with options:  OR=0.764
+S2 Full 1955-2014: among locked dyads only               N=  5548 ev=  69 | sd_w5: OR=0.583 p=0.083
+S3 Full 1955-2014: among dyads with options              N= 46882 ev= 693 | sd_w5: OR=0.761 p=0.062
+S4 Full 1955-2014: + continuous outside options          N= 52430 ev= 762 | sd_w5: OR=0.767 p=0.055 | out_min: OR=1.153 p=0.001
+
+panel updated with out_i, out_j, locked, out_min

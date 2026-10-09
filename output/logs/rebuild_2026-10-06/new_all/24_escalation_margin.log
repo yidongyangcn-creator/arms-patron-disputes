@@ -1,0 +1,19 @@
+dispute-level dataset: 2327 dyadic disputes 1955-2014; wars=134, fatal=529; covariate coverage=73%
+
+=== MARGIN 2: ESCALATION | dispute occurred ===
+war ~ sd_w5 (bivariate)                                    N= 1708 ev=  70  OR=0.326 p=0.060
+war ~ sd_w5 + era                                          N= 1708 ev=  70  OR=0.333 p=0.063
+war ~ sd_w5 + full controls + era                          N= 1473 ev=  53  OR=0.354 p=0.144
+war ~ shared US + controls + era                           N= 1473 ev=  53  OR=0.380 p=0.339
+war ~ same top supplier + controls + era                   N= 1473 ev=  53  OR=0.703 p=0.434
+fatality ~ sd_w5 (bivariate)                               N= 1576 ev= 374  OR=0.810 p=0.376
+fatality ~ sd_w5 + controls + era                          N= 1368 ev= 297  OR=0.925 p=0.750
+Firth: war ~ sd_w5 + controls + era:                       OR=0.437 p=0.1989
+
+=== MARGIN 1: ONSET (headline, w5, both-importers, +UNGA) ===
+onset CW: shared dominant patron                           N=24376 ev= 434  OR=0.711 p=0.014
+onset post-90: shared dominant patron                      N=28655 ev= 334  OR=0.960 p=0.846
+onset CW: same top supplier                                N=24376 ev= 434  OR=0.684 p=0.006
+onset post-90: shared US patron                            N=28655 ev= 334  OR=0.479 p=0.071
+
+saved two_margin_main_table.csv, dispute_level_1955_2014.csv

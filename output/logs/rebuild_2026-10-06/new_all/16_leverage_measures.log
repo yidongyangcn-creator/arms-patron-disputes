@@ -1,0 +1,40 @@
+==============================================================================================================
+(1) MAIN TABLES, w5 PRIMARY MEASURE (both-importers, full controls + peace-yrs + UNGA)
+==============================================================================================================
+T1 Cold War: shared dominant patron                      N= 24376 on= 434  | sd_w5: OR=0.711 p=0.014
+T1 Post-90: shared dominant patron                       N= 28655 on= 334  | sd_w5: OR=0.960 p=0.846
+T1 Cold War: shared US patron                            N= 24376 on= 434  | shared_us_w5: OR=0.761 p=0.115
+T1 Post-90: shared US patron                             N= 28655 on= 334  | shared_us_w5: OR=0.479 p=0.071
+T1 Cold War: overlap gradient (w5)                       N= 24376 on= 434  | overlap_w5: OR=0.608 p=0.006
+T1 Post-90: overlap gradient (w5)                        N= 28655 on= 334  | overlap_w5: OR=0.865 p=0.591
+T1 Pooled + era interaction                              N= 53031 on= 768  | sd_w5: OR=0.951 p=0.806 | sd_w5:cwera: OR=0.762 p=0.239
+T1 dyad-FE Cold War                                      dyads= 209 obs=  5908  | sd_w5: OR=0.924 p=0.684
+T1 dyad-FE Full 1955-2014                                dyads= 310 obs= 13542  | sd_w5: OR=0.872 p=0.343
+T1 MENA net (post-90): shared dominant (w5)              N=  2429 on=  67  | sd_w5: OR=0.388 p=0.091
+T1 MENA net (post-90): shared US (w5)                    N=  2429 on=  67  | shared_us_w5: OR=0.338 p=0.097
+
+==============================================================================================================
+(2) CONTINUOUS LEVERAGE DECOMPOSITION (both-importers; financing terms NOT feasible w/o aid data)
+==============================================================================================================
+L1 Cold War: same top supplier (any share)               N= 24376 on= 434  | same_top5: OR=0.684 p=0.006
+L2 Cold War: + continuous min patron share               N= 24376 on= 434  | same_top5: OR=0.956 p=0.886 | pshare_min: OR=0.615 p=0.243
+L3 Cold War: binary >=50% vs continuous                  N= 24376 on= 434  | sd_w5: OR=1.477 p=0.349 | pshare_min: OR=0.363 p=0.070
+L4 Cold War: within same-top: share + asym               N=  5629 on=  79  | pshare_min: OR=0.357 p=0.114 | dep_asym: OR=0.327 p=0.205
+L5 Cold War: horse-race patron vs overlap                N= 24376 on= 434  | sd_w5: OR=0.913 p=0.717 | overlap_w5: OR=0.671 p=0.230
+L1 Full 1955-2014: same top supplier (any share)         N= 53031 on= 768  | same_top5: OR=0.723 p=0.009
+L2 Full 1955-2014: + continuous min patron share         N= 53031 on= 768  | same_top5: OR=0.745 p=0.268 | pshare_min: OR=0.954 p=0.896
+L3 Full 1955-2014: binary >=50% vs continuous            N= 53031 on= 768  | sd_w5: OR=1.636 p=0.085 | pshare_min: OR=0.354 p=0.007
+L4 Full 1955-2014: within same-top: share + asym         N= 10937 on= 129  | pshare_min: OR=0.484 p=0.181 | dep_asym: OR=0.321 p=0.127
+L5 Full 1955-2014: horse-race patron vs overlap          N= 53031 on= 768  | sd_w5: OR=1.040 p=0.839 | overlap_w5: OR=0.639 p=0.060
+
+==============================================================================================================
+(3) MARKET-CONCENTRATION MODERATOR (full 1955-2014, both-importers)
+==============================================================================================================
+   global 5yr HHI: 1960=0.263 1975=0.281 1990=0.235 2005=0.190 2014=0.185
+M1 sd_w5 x HHI(z)                                        N= 53031 on= 768  | sd_w5: OR=0.862 p=0.259 | sd_w5:hhi_z: OR=0.863 p=0.160
+      effect at low conc (-1sd) : OR=0.999
+      effect at mean            : OR=0.862
+      effect at high conc (+1sd): OR=0.744
+M2 continuous share x HHI(z)                             N= 53031 on= 768  | pshare_min: OR=1.263 p=0.536 | pshare_min:hhi_z: OR=0.865 p=0.314
+
+panel updated: same_top5, pshare_min, dep_asym, shared_us_w5, overlap_w5, hhi

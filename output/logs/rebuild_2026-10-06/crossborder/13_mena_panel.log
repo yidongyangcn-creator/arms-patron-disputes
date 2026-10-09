@@ -1,0 +1,13 @@
+MENA complete-network panel: 2625 dyad-years, 80 onsets (3.05%), both-import share 76%
+
+====================================================================================================
+CLEAN MENA LADDER (complete network, no selection)
+====================================================================================================
+1. lean: overlap + distance + peace-yrs              N= 2625 on= 80  overlap_lag1 OR=0.507 p=0.215
+2. full controls + peace-yrs                         N= 2625 on= 80  overlap_lag1 OR=0.423 p=0.099
+3. + both-import indicator                           N= 2625 on= 80  overlap_lag1 OR=0.444 p=0.131  both_imp OR=0.92 p=0.74
+4. both-import SUBSAMPLE (gradient)                  N= 1988 on= 56  overlap_lag1 OR=0.442 p=0.127
+5. shared dominant supplier                          N= 1988 on= 56  shared_dominant OR=0.496 p=0.064
+6. shared US patron                                  N= 1988 on= 56  shared_us OR=0.376 p=0.025
+
+Firth (spec 2): overlap OR=0.445  p=0.0852

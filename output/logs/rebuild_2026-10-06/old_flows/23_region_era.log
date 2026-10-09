@@ -1,0 +1,26 @@
+/sessions/admiring-epic-newton/.local/lib/python3.10/site-packages/statsmodels/discrete/discrete_model.py:268: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/sessions/admiring-epic-newton/.local/lib/python3.10/site-packages/statsmodels/discrete/discrete_model.py:268: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/sessions/admiring-epic-newton/.local/lib/python3.10/site-packages/statsmodels/discrete/discrete_model.py:268: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/sessions/admiring-epic-newton/.local/lib/python3.10/site-packages/statsmodels/discrete/discrete_model.py:268: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/sessions/admiring-epic-newton/.local/lib/python3.10/site-packages/statsmodels/discrete/discrete_model.py:268: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+region         era                     N   on  sharedDom OR      p   overlap OR      p
+MENA           Cold War 1955-89     1318   84         0.540  0.205        0.352  0.100
+MENA           Post-1990            1016   41         0.503  0.191        0.728  0.600
+Asia-Pacific   Cold War 1955-89     1465   75         0.923  0.792        0.769  0.470
+Asia-Pacific   Post-1990            1705   85         1.450  0.272        2.430  0.034
+Europe         Cold War 1955-89     3429   48         1.255  0.597        1.449  0.536
+Europe         Post-1990            3500   30         0.478  0.304        0.388  0.270
+SubSah.Africa  Cold War 1955-89      911   28         0.569  0.410        0.373  0.301
+SubSah.Africa  Post-1990             453    9         0.000  0.000        0.648  0.592
+S.America      Cold War 1955-89      628   19         1.474  0.613        2.861  0.374
+S.America      Post-1990             388    9         0.000  0.000        0.461  0.638  (lean)
+N.Am/Carib     Cold War 1955-89      653   20         0.731  0.570        0.844  0.807
+cross-region   Cold War 1955-89    13579  157         0.527  0.031        0.394  0.008
+cross-region   Post-1990           12989   90         0.565  0.220        0.549  0.207
+
+Saved FIG_patron_by_region_era.png, region_era_patron_results.csv

@@ -1,0 +1,19 @@
+================================================================================
+(1) DYAD-FE conditional logit — within-dyad shared-patron changes
+================================================================================
+[Cold War 1955-89  ] dyads= 208 obs=  5642  shared_dominant OR=0.768 p=0.169
+[Full 1955-2014    ] dyads= 280 obs= 11394  shared_dominant OR=0.727 p=0.030
+
+================================================================================
+(2) SHIFT-SHARE IV for shared dominant patron
+================================================================================
+
+[Cold War 1957-89] N=13732, onsets=286, instrument coverage share=64%
+  First stage: coef=+0.236  t=11.4  F≈131
+  Reduced form (logit): OR=0.936  p=0.685
+  2SLS-LPM shared_dominant: coef=-0.0051 p=0.672   [OLS-LPM -0.0037 p=0.211]
+
+[Full 1957-2014] N=28775, onsets=530, instrument coverage share=69%
+  First stage: coef=+0.196  t=15.9  F≈253
+  Reduced form (logit): OR=0.896  p=0.333
+  2SLS-LPM shared_dominant: coef=-0.0102 p=0.296   [OLS-LPM -0.0032 p=0.179]

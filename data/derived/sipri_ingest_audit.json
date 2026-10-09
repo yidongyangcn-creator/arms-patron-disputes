@@ -1,0 +1,44 @@
+{
+  "input": "/tmp/apd_all/data/raw/trade-register.csv",
+  "schema": "NEW",
+  "measure": "all",
+  "rows_read": 60789,
+  "rows_per_delivery_year": 60789,
+  "local_production_values": {
+    "no": 50564,
+    "yes": 10225
+  },
+  "legacy_replication_factor": 1.0,
+  "distinct_names": 258,
+  "dropped_by_reason": {
+    "drop: crosswalk": {
+      "name_side_pairs": 8,
+      "rows": 492,
+      "tiv": 3064.47
+    },
+    "drop: international organisation (**)": {
+      "name_side_pairs": 8,
+      "rows": 113,
+      "tiv": 6996.27
+    },
+    "drop: non-state recipient (*)": {
+      "name_side_pairs": 58,
+      "rows": 386,
+      "tiv": 1634.36
+    }
+  },
+  "unmatched": 0,
+  "outside_membership_tiv": 1312.8,
+  "tiv_all": 2121835.5,
+  "tiv_local": 565861.5,
+  "tiv_crossborder": 1555974.0,
+  "tiv_in_flow_file": 2121835.5,
+  "years": [
+    1950,
+    2025
+  ],
+  "recipients": 187,
+  "suppliers": 128,
+  "flow_rows": 22914,
+  "local_flag_share_of_all_tiv": 0.2667
+}

@@ -1,0 +1,33 @@
+(a) FLIP RATES consecutive dyad-years: single-year 11.9%  |  5-yr window 4.9%
+    [memo claim: single-year 11.6%]
+
+(b) COLD WAR 1955-89, both-importers (5-yr window measure)
+  w5 shared dominant patron (no UNGA)                      N= 27445 on= 491  OR=0.691 p=0.007
+  w5 + UNGA ideal-dist   [memo: OR=0.66 p=0.005]           N= 24376 on= 434  OR=0.711 p=0.014
+  no-defense-pact subsample [memo: OR=0.65 p=0.032]        N= 18879 on= 312  OR=0.761 p=0.142
+  top-10 exporters (ccode): [2, 365, 200, 220, 710, 255, 325, 260, 315, 210]
+  drop dyads containing top-10 exporter                    N=  7524 on= 257  OR=0.745 p=0.060
+
+(c) ESCALATION | dispute occurred: 2181 dyadic disputes 1955-2014  [memo: 3,396]
+   war (hostlev=5)      N=1926  shared-patron OR=0.368 p=0.033   [memo: war OR=1.56 p=0.49; fatality OR=0.90 p=0.75]
+   any fatality         N=1769  shared-patron OR=0.812 p=0.330   [memo: war OR=1.56 p=0.49; fatality OR=0.90 p=0.75]
+
+(d) RESIDUAL RANKING among dyads sharing patron >=50% of years (n=159)
+   OFF-the-line (worst over-performers):
+   dyad  years  onsets  predicted  patron_share  residual
+CHN-IND     44       9       2.08          0.57      6.92
+IRQ-SYR     45       7       2.38          0.73      4.62
+GRC-TUR     59       8       4.09          0.53      3.91
+CHN-PRK     24       5       1.41          0.92      3.59
+CHN-DRV     36       5       2.01          0.61      2.99
+EGY-ISR     59       9       6.04          0.51      2.96
+   ON-the-line (best-fitting, full concentration):
+   dyad  years  onsets  predicted  patron_share  residual
+ETH-YEM      3       0       0.01           1.0     -0.01
+VAN-SOL      4       0       0.01           1.0     -0.01
+UZB-CHN     10       0       0.02           1.0     -0.02
+UZB-KZK     10       0       0.02           1.0     -0.02
+TAJ-CHN     13       0       0.02           1.0     -0.02
+KZK-CHN     19       0       0.04           1.0     -0.04
+
+panel updated with sd_w5, both_imp_w5, unga

@@ -1,0 +1,69 @@
+====================================================================================================
+1. PATRON-SELECTION ALTERNATIVE
+====================================================================================================
+  baseline: P(lose shared patron within 3 yrs | no onset)=38.3%, | onset=34.1%  (n onsets=132)
+1a  lose shared patron within 3y ~ onset                     N=  8672 ev=3339  onset: OR=1.189 p=0.320
+1a  lose shared patron next year ~ onset                     N=  9193 ev=1508  onset: OR=1.435 p=0.127
+1b  CW: dyads at peace >=20 yrs                              N= 16858 ev= 113  sd_w5: OR=0.584 p=0.065
+1b  CW: dyads at peace >=10 yrs                              N= 21393 ev= 212  sd_w5: OR=0.605 p=0.010
+1b  full: dyads at peace >=20 yrs                            N= 41727 ev= 222  sd_w5: OR=0.483 p=0.002
+1b  full: dyads at peace >=10 yrs                            N= 47548 ev= 361  sd_w5: OR=0.567 p=0.000
+1c  CW: sharing established >=5y before t                    N= 20309 ev= 345  sd_est5: OR=0.821 p=0.339
+1c  full: sharing established >=5y before t                  N= 43994 ev= 643  sd_est5: OR=0.940 p=0.725
+
+====================================================================================================
+2. ORIGINATOR-ONLY ONSETS (coalition joiners dropped)
+====================================================================================================
+  onsets all-dyads=957 vs originator-only=812
+2   CW primary, originator dyads only                        N= 24376 ev= 370  sd_w5: OR=0.753 p=0.055
+2   full, shared US, originator only                         N= 53031 ev= 656  shared_us_w5: OR=0.774 p=0.145
+2   CW same-top, originator only                             N= 24376 ev= 370  same_top5: OR=0.731 p=0.032
+
+====================================================================================================
+3. NO TRADE CONTROL (keeps Eastern-bloc dyads)
+====================================================================================================
+3   CW sd_w5          WITH trade control                     N= 24376 ev= 434  sd_w5: OR=0.711 p=0.014
+3   CW sd_w5          NO trade control                       N= 25860 ev= 470  sd_w5: OR=0.719 p=0.011
+3   CW shared_us_w5   WITH trade control                     N= 24376 ev= 434  shared_us_w5: OR=0.761 p=0.115
+3   CW shared_us_w5   NO trade control                       N= 25860 ev= 470  shared_us_w5: OR=0.715 p=0.047
+3   CW shared_sov_w5  WITH trade control                     N= 24376 ev= 434  shared_sov_w5: OR=0.708 p=0.312
+3   CW shared_sov_w5  NO trade control                       N= 25860 ev= 470  shared_sov_w5: OR=0.810 p=0.439
+
+====================================================================================================
+4. FULL POLREL SAMPLE (no both-importer conditioning)
+====================================================================================================
+4   CW: sd (0 if not both-import) + both-import dummy        N= 26114 ev= 445  sd_w5_0: OR=0.710 p=0.013 | both_imp_w5: OR=2.289 p=0.015
+4   full: sd (0 if not both-import) + both-import dummy      N= 62128 ev= 866  sd_w5_0: OR=0.784 p=0.062 | both_imp_w5: OR=0.962 p=0.734
+
+====================================================================================================
+5. YEAR FIXED EFFECTS
+====================================================================================================
+5   CW primary + year FE                                     N= 24376 ev= 434  sd_w5: OR=0.757 p=0.049
+5   full shared US + year FE                                 N= 53031 ev= 768  shared_us_w5: OR=0.708 p=0.058
+
+====================================================================================================
+6. ASIA-PACIFIC: which shared-patron dyads have onsets?
+====================================================================================================
+d
+BNG-MYA                                  [1991, 2014]
+CAM-LAO                                        [1977]
+CAM-RVN                                        [1956]
+CHN-DRV                      [1993, 1998, 2002, 2010]
+CHN-IND    [1969, 1971, 1973, 2003, 2007, 2009, 2013]
+CHN-MON                                        [1973]
+CHN-PRK                [1993, 1995, 1997, 2003, 2010]
+CHN-ROK                                        [1985]
+CHN-TAW                                        [1987]
+IND-BNG                                  [1976, 2001]
+IND-MYA                                        [1957]
+IND-PAK                                        [1955]
+JPN-PHI                                        [1982]
+KYR-UZB                                        [2005]
+MAL-PHI                                        [1979]
+MYA-THI                            [1975, 1977, 1980]
+ROK-JPN          [1958, 1966, 1996, 1999, 2005, 2011]
+TAJ-UZB                                        [2011]
+TAW-JPN          [1996, 2003, 2005, 2008, 2010, 2012]
+TAW-PHI                      [1956, 1994, 2003, 2013]
+THI-CAM                                        [1975]
+THI-LAO                      [1960, 1964, 1970, 1975]

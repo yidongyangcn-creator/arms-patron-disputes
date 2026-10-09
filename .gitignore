@@ -2,6 +2,13 @@
 data/raw/*
 !data/raw/.gitkeep
 
+# ---- Not tracked on purpose --------------------------------------------------
+# voided lineage (see README); 11_integrate.py still writes it for the overview
+data/derived/dyad_year_panel_1990_2014.csv
+# local backups of the pre-rebuild build; the old versions are in git history
+data/derived_OLD/
+output_OLD/
+
 # ---- Python ----------------------------------------------------------------
 __pycache__/
 *.py[cod]
@@ -18,6 +25,8 @@ __pycache__/
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+# ...but keep the pipeline logs from the SIPRI rebuild
+!output/logs/**/*.log
 
 # ---- OS / editors ----------------------------------------------------------
 .DS_Store

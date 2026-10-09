@@ -14,19 +14,25 @@ the region-by-region design; this file is just the shopping list.
 | `derived/clean_mena_panel_1990_2014.csv` | 350 KB | MENA complete-network panel, where the shared-patron hypothesis was generated. |
 | `derived/dispute_level_1955_2014.csv` | 288 KB | Dispute-level file behind the escalation-margin test. |
 | `derived/extension_panel_2015_2024.csv` | 1.1 MB | UCDP-based extension past the end of MID 5.0. |
-| `derived/bilateral_tiv_by_year.csv` | 422 KB | Recipient←supplier TIV flows by year, from the SIPRI register. |
+| `derived/bilateral_tiv_by_year.csv` | 404 KB | Recipient←supplier TIV flows by year, from the SIPRI register, every delivery counted (rebuilt 6 Oct 2026). |
+| `derived/bilateral_tiv_by_year_full.csv` | 632 KB | Same flows with all, local-production-flagged and cross-border TIV as separate columns. |
+| `derived/licensed_share_by_recipient_year.csv` | 232 KB | Share of each recipient's TIV flagged as local production; a moderator. |
+| `derived/sipri_ingest_audit.json`, `sipri_ingest_dropped.csv`, `sipri_ingest_outside_membership.csv` | small | What the ingest read, dropped and why. |
+| `derived_crossborder/` | 1.3 MB | The same flows counting only deliveries not flagged as local production (robustness). |
 | `derived/overlap_long_allyears.csv` | 6.3 MB | Dyadic supplier-overlap, every year 1950–2025. |
 | `reference/statelist2024.csv` | 11 KB | COW state list — the crosswalk spine. |
 
 ## To download into `raw/`
 
-Everything is harmonised to **COW ccode** by `code/01_build/11_integrate.py`, including
-SIPRI-specific spellings (Türkiye, Soviet Union → 365, DR Congo, Czechia). Non-state
-recipients — rebel groups, the African Union — are dropped.
+Everything is harmonised to **COW ccode**. SIPRI names go through
+`code/01_build/10_sipri_ingest.py` and `reference/sipri_cow_crosswalk.csv` (Türkiye,
+Soviet Union → 365, DR Congo, Germany → 260 before 1990); any unmapped name halts the
+build. Non-state recipients (`*`) and international organisations (`**`) are dropped and
+listed in `derived/sipri_ingest_dropped.csv`.
 
 | Source | Path under `raw/` | Where |
 |---|---|---|
-| **SIPRI Arms Transfers Database** — trade register, global, 1950–2025 | `trade-register.csv` | <https://armstrade.sipri.org/> — export the full register, all suppliers × recipients. 29,916 deal rows → 22,914 bilateral flows after mapping. |
+| **SIPRI Arms Transfers Database** — trade register, global, 1950–2025 | `trade-register.csv` | <https://armstransfers.sipri.org/ArmsTransfer/TransferRegister> — all suppliers and recipients, 1950–2025, with **"Register with deliveries broken down by year"** and **"Register with only deliveries in the Year Range"** both ticked. The per-deal export without those boxes is the format that caused the multi-year replication; the ingest detects it and warns. The 6 Oct 2026 export: 60,789 delivery-year rows → 22,914 bilateral flows. |
 | **MID 5.0** (participant-level MIDB) | `MID-5-Data-and-Supporting-Materials/` | <https://correlatesofwar.org/data-sets/mids/> — dyads are built by crossing side A × side B per dispute. Ends 2014, which sets the modelling window. |
 | **V-Dem v16** | `V-Dem-CY-FullOthers-v16_csv/` | <https://v-dem.net/data/the-v-dem-dataset/> — 406 MB CSV. Only `v2x_polyarchy` is used; consider slicing it once and keeping the slice. |
 | **NMC 6.0** (CINC) | `NMC_Documentation-6.0/` | <https://correlatesofwar.org/data-sets/national-material-capabilities/> — ends 2012, forward-filled to 2014. |

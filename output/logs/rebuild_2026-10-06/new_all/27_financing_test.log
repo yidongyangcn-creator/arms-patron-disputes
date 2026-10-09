@@ -1,0 +1,5 @@
+F0 shared US patron (baseline)                   | shared_us_w5: OR=0.659 p=0.016
+F1 both US-aid-financed                          | both_us_aid: OR=0.980 p=0.882
+F2 interaction                                   | shared_us_w5: OR=0.659 p=0.048 | both_us_aid: OR=1.137 p=0.368 | shared_us_w5:both_us_aid: OR=0.907 p=0.770
+   effect when both aid-financed OR=0.598; not aid-financed OR=0.659
+F3 continuous aid interaction                    | shared_us_w5: OR=0.633 p=0.129 | shared_us_w5:ln_min_aid: OR=1.000 p=0.983

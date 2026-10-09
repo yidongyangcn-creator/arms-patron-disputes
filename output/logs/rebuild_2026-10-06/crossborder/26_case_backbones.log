@@ -1,0 +1,38 @@
+saved CASE_iraq_syria.png
+
+USSR->Iraq TIV 1978-84: [1675, 1234, 1759, 1561, 1735, 1560, 2526]
+USSR->Syria TIV 1978-84: [791, 1586, 1692, 1302, 1809, 2155, 1715]
+saved CASE_hungary_romania.png
+saved CASE_greece_turkey.png
+
+USA->Turkey TIV 1972-80: [607, 670, 1232, 351, 164, 165, 762, 755, 185]
+saved CASE_egypt_israel.png
+
+USSR->Egypt TIV 1970-80: [1914, 1979, 3253, 2487, 873, 90, 0, 0, 0, 0, 0]
+USA ->Egypt TIV 1975-85: [0, 56, 112, 9, 339, 414, 890, 1369, 970, 383, 436]
+
+OFF-the-line top10:
+   dyad  years  onsets  predicted  patron_share_yrs  residual
+CHN-IND     40       8       1.81              0.65      6.19
+IRQ-SYR     45       7       2.31              0.73      4.69
+GRC-TUR     59       8       3.85              0.64      4.15
+CHN-PRK     16       4       0.81              0.94      3.19
+CHN-DRV     36       5       1.90              0.64      3.10
+ROK-JPN     24       4       1.38              1.00      2.62
+HON-SAL     44       5       2.60              0.64      2.40
+GUA-UKG     54       3       0.88              0.65      2.12
+ARG-UKG     59       3       1.16              0.58      1.84
+IRQ-EGY      4       2       0.20              0.50      1.80
+
+ON-the-line (conc>=0.9, years>=20):
+   dyad  years  onsets  predicted  patron_share_yrs  residual
+SAL-JPN     24       0       0.03              0.92     -0.03
+ISR-JPN     24       0       0.04              1.00     -0.04
+NTH-JPN     24       0       0.04              0.92     -0.04
+UKG-ROK     24       0       0.04              1.00     -0.04
+JPN-AUL     24       0       0.04              1.00     -0.04
+BAH-JPN     24       0       0.04              0.92     -0.04
+UKG-JPN     58       0       0.27              0.97     -0.27
+UKG-NTH     59       0       0.79              0.93     -0.79
+POL-CZE     28       0       0.94              1.00     -0.94
+HUN-CZE     30       0       1.10              1.00     -1.10

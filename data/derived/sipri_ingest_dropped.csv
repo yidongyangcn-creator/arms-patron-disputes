@@ -1,0 +1,75 @@
+reason,side,name,rows,tiv
+drop: crosswalk,recipient,unknown recipient(s),122,1663.74
+drop: crosswalk,supplier,unknown supplier(s),326,1244.29
+drop: crosswalk,recipient,Western Sahara,18,78.8
+drop: crosswalk,recipient,Palestine,12,39.98
+drop: crosswalk,supplier,Aruba,1,17.8
+drop: crosswalk,recipient,Katanga,6,9.52
+drop: crosswalk,recipient,Biafra,6,8.9
+drop: crosswalk,recipient,Northern Cyprus,1,1.44
+drop: international organisation (**),recipient,NATO**,51,6690.33
+drop: international organisation (**),recipient,United Nations**,39,185.49
+drop: international organisation (**),recipient,African Union**,14,104.01
+drop: international organisation (**),recipient,Regional Security System**,1,14.0
+drop: international organisation (**),recipient,OSCE**,2,1.2
+drop: international organisation (**),supplier,African Union**,4,0.6599999999999999
+drop: international organisation (**),supplier,European Union**,1,0.4
+drop: international organisation (**),supplier,United Nations**,1,0.18
+drop: non-state recipient (*),recipient,House of Representatives (Libya)*,40,418.28
+drop: non-state recipient (*),recipient,Northern Alliance (Afghanistan)*,16,231.54000000000002
+drop: non-state recipient (*),recipient,Mujahedin (Afghanistan)*,28,137.6
+drop: non-state recipient (*),recipient,Hezbollah (Lebanon)*,72,106.85
+drop: non-state recipient (*),recipient,LF (Lebanon)*,12,101.55
+drop: non-state recipient (*),recipient,Houthi rebels (Yemen)*,38,80.8
+drop: non-state recipient (*),recipient,Southern rebels (Yemen)*,5,80.16
+drop: non-state recipient (*),recipient,Amal (Lebanon)*,5,63.120000000000005
+drop: non-state recipient (*),recipient,SLA (Lebanon)*,11,49.96
+drop: non-state recipient (*),recipient,Viet Cong (South Vietnam)*,5,40.28
+drop: non-state recipient (*),recipient,Pathet Lao (Laos)*,11,37.81
+drop: non-state recipient (*),recipient,Lebanon Palestinian rebels*,5,32.3
+drop: non-state recipient (*),recipient,PLO (Israel)*,11,30.52
+drop: non-state recipient (*),recipient,Contras (Nicaragua)*,10,27.74
+drop: non-state recipient (*),recipient,UNITA (Angola)*,6,27.3
+drop: non-state recipient (*),recipient,Khmer Rouge (Cambodia)*,9,25.0
+drop: non-state recipient (*),recipient,Ukraine Rebels*,4,23.830000000000002
+drop: non-state recipient (*),recipient,FNLA (Angola)*,1,22.5
+drop: non-state recipient (*),recipient,RSF (Sudan)*,3,18.85
+drop: non-state recipient (*),recipient,Armas (Guatemala)*,7,8.31
+drop: non-state recipient (*),recipient,GUNT (Chad)*,3,7.529999999999999
+drop: non-state recipient (*),recipient,Haiti rebels*,1,7.0
+drop: non-state recipient (*),recipient,Indonesia rebels*,1,6.0
+drop: non-state recipient (*),recipient,Syria rebels*,9,5.26
+drop: non-state recipient (*),recipient,LTTE (Sri Lanka)*,9,4.87
+drop: non-state recipient (*),recipient,ELF (Ethiopia)*,2,4.0
+drop: non-state recipient (*),recipient,FMLN (El Salvador)*,5,3.12
+drop: non-state recipient (*),recipient,Hamas (Palestine)*,4,3.0500000000000003
+drop: non-state recipient (*),recipient,United Wa State (Myanmar)*,2,3.0
+drop: non-state recipient (*),recipient,Viet Minh (France)*,1,2.5
+drop: non-state recipient (*),recipient,Anti-Castro rebels (Cuba)*,1,2.2
+drop: non-state recipient (*),recipient,EPLF (Ethiopia)*,4,2.0
+drop: non-state recipient (*),recipient,SNA (Somalia)*,1,2.0
+drop: non-state recipient (*),recipient,SPLA (Sudan)*,2,2.0
+drop: non-state recipient (*),recipient,Kurdistan Regional Government (Iraq)*,2,1.8
+drop: non-state recipient (*),recipient,ZAPU (Zimbabwe)*,4,1.4100000000000001
+drop: non-state recipient (*),recipient,Provisional IRA (UK)*,2,1.2000000000000002
+drop: non-state recipient (*),supplier,FMLN (El Salvador)*,1,1.02
+drop: non-state recipient (*),recipient,FRELIMO (Portugal)*,1,1.0
+drop: non-state recipient (*),recipient,MPLA (Portugal)*,2,1.0
+drop: non-state recipient (*),recipient,PAIGC (Portugal)*,2,1.0
+drop: non-state recipient (*),recipient,Darfur rebels (Sudan)*,3,0.8800000000000001
+drop: non-state recipient (*),supplier,House of Representatives (Libya)*,3,0.8800000000000001
+drop: non-state recipient (*),supplier,Mujahedin (Afghanistan)*,1,0.8
+drop: non-state recipient (*),recipient,PKK (Turkiye)*,3,0.72
+drop: non-state recipient (*),recipient,NTC (Libya)*,2,0.52
+drop: non-state recipient (*),recipient,FAN (Chad)*,1,0.4
+drop: non-state recipient (*),recipient,NLA (Macedonia)*,1,0.4
+drop: non-state recipient (*),recipient,Palestinian Islamic Jihad (Israel/Palestine)*,1,0.4
+drop: non-state recipient (*),recipient,RPF (Rwanda)*,1,0.35
+drop: non-state recipient (*),recipient,RUF (Sierra Leone)*,2,0.35
+drop: non-state recipient (*),recipient,PRC (Israel/Palestine)*,1,0.25
+drop: non-state recipient (*),recipient,ANC (South Africa)*,1,0.24
+drop: non-state recipient (*),recipient,LRA (Uganda)*,1,0.2
+drop: non-state recipient (*),recipient,unknown rebel group*,3,0.2
+drop: non-state recipient (*),recipient,UIC (Somalia)*,1,0.19
+drop: non-state recipient (*),recipient,MNLF (Philippines)*,1,0.16
+drop: non-state recipient (*),recipient,MTA (Myanmar)*,2,0.16

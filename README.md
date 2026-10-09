@@ -7,6 +7,14 @@ Working repository. Yidong Yang and Zhengyi (Jerry) Zhang; advised by Paul Poast
 > settled, the paper is not written, and the slide deck has not been revised. Do not
 > circulate any of it outside the three of us without checking `docs/PROJECT_MEMO.md`
 > first.
+>
+> **6 October 2026: the SIPRI flows were rebuilt** from the per-delivery-year export.
+> The old flows counted every multi-year deal once per delivery year, which inflated
+> global TIV 4.49 times. They also coded West Germany as unified Germany before 1990,
+> and the financing test silently dropped 8.5% of Greenbook aid, Taiwan included. The
+> table below shows the new estimates next to the old ones. Details are in
+> `REBUILD_SIPRI.md` and `output/tables/sipri_rebuild_results.md`; `docs/` and
+> `docs/results/` predate the rebuild.
 
 ## The claim, as it currently stands
 
@@ -17,23 +25,27 @@ Generic portfolio overlap, absent a dominant patron, does nothing. The constrain
 to work through the patron's relational leverage (aid, resupply, spare parts,
 conditionality) rather than through portfolio similarity as such.
 
-| Test | OR | p |
+| Test | OR (p), rebuilt flows | OR (p), before rebuild |
 |---|---|---|
-| **Shared dominant patron, Cold War 1955–89** (declared ex ante, primary) | **0.594** | **0.001** |
-| Cold War, shared US patron | 0.544 | 0.004 |
-| Cold War, generic overlap gradient | 0.492 | <0.001 |
-| Post-1990, shared dominant patron | 0.855 | 0.497 |
-| MENA post-1990, shared US patron (hypothesis-generating) | 0.29 | 0.015 |
-| Dyad fixed effects, full clean panel | 0.617 | 0.002 |
-| Era interaction (patron × Cold War) | 0.721 | 0.216 |
-| Cold War, shared dominant patron, 5-yr window measure + UNGA control | 0.661 | 0.005 |
-| Cold War, same spec, no-defense-pact dyads only | 0.647 | 0.032 |
-| Shared US patron, full period 1955–2014 | 0.646 | 0.013 |
-| Escalation to war given a dispute (with controls) | 0.650 | 0.430 |
-| Shared US patron × both aid-financed (financing test) | 1.042 | 0.902 |
-| Cold War primary, originator dyads only | 0.692 | 0.020 |
-| Cold War primary, dyads at peace 20+ years (selection check) | 0.547 | 0.039 |
-| Asia-Pacific, import-dependent shared patron (goes the other way) | 1.752 | 0.001 |
+| **Shared dominant patron, Cold War 1955–89** (declared ex ante, primary) | **0.664 (0.008)** | 0.594 (0.001) |
+| Cold War, shared US patron | 0.651 (0.028) | 0.544 (0.004) |
+| Cold War, generic overlap gradient | 0.532 (0.002) | 0.492 (<0.001) |
+| Post-1990, shared dominant patron | 1.020 (0.924) | 0.855 (0.497) |
+| MENA post-1990, shared US patron (hypothesis-generating) | 0.463 (0.082) | 0.29 (0.015) |
+| Dyad fixed effects, full clean panel | 0.727 (0.030) | 0.617 (0.002) |
+| Era interaction (patron × Cold War) | 0.686 (0.122) | 0.721 (0.216) |
+| Cold War, shared dominant patron, 5-yr window measure + UNGA control | **0.711 (0.014)** | 0.661 (0.005) |
+| Cold War, same spec, no-defense-pact dyads only | 0.761 (0.142) | 0.647 (0.032) |
+| Shared US patron, full period 1955–2014 | 0.659 (0.016) | 0.646 (0.013) |
+| Escalation to war given a dispute (with controls) | 0.354 (0.144) | 0.650 (0.430) |
+| Shared US patron × both aid-financed (financing test) | 0.907 (0.770) | 1.042 (0.902) |
+| Cold War primary, originator dyads only | 0.753 (0.055) | 0.692 (0.020) |
+| Cold War primary, dyads at peace 20+ years (selection check) | 0.584 (0.065) | 0.547 (0.039) |
+| Asia-Pacific, import-dependent shared patron (goes the other way) | 2.046 (<0.001) | 1.752 (0.001) |
+
+Rebuilt flows count every delivery (`--measure all`, the default). Counting only
+deliveries not flagged as local production gives a primary OR of 0.65 (p=0.006); see
+`output/tables/sipri_rebuild_results.md` for both measures side by side.
 
 Primary panel: `data/derived/clean_polrel_panel_1955_2014.csv`, 77,542 dyad-years, 1,109
 onsets, politically-relevant dyads, both-importer, full controls plus peace-years,
@@ -50,9 +62,10 @@ stage, null reduced form. The current reading is that market share is not what p
 and leverage is relational, which makes the case studies load-bearing rather than
 decorative. But that reading is a choice; the null also admits "there is no causal effect."
 
-**The within-dyad evidence is measure-sensitive.** Dyad fixed effects give OR 0.617
-(p=0.002) with the single-year patron measure but 0.81 (p=0.16) with the five-year window
-measure that is now primary — the window smooths away most of the within-dyad variation.
+**The within-dyad evidence is measure-sensitive.** On the rebuilt flows, dyad fixed effects
+give OR 0.727 (p=0.030) with the single-year patron measure but 0.872 (p=0.34) with the
+five-year window measure that is now primary (before the rebuild: 0.617 and 0.81). The
+window smooths away most of the within-dyad variation.
 The IV and FE were re-run on the clean panel (`21_patron_identification.py`,
 `docs/results/RESULTS_patron_identification.md`); the earlier IV results on the voided
 panel are not tracked here.
@@ -96,15 +109,18 @@ docs/
 ### Pipeline order
 
 ```bash
-python code/01_build/11_integrate.py        # SIPRI register -> bilateral TIV, overlap
+rm data/derived/clean_polrel_panel_1955_2014.csv   # only for a full rebuild; see below
+
+python code/01_build/10_sipri_ingest.py     # SIPRI register -> audited bilateral TIV; halts on unmapped names
+python code/01_build/11_integrate.py        # MID, V-Dem, CINC, alliances; overlap
 python code/01_build/12_clean_panel.py      # the rebuilt unconditional panel
 python code/01_build/13_mena_panel.py       # MENA complete-network panel
+python code/02_analysis/22_patron_confirmation.py   # the declared primary test; MUST run before 14, it creates the 1955-2014 panel
 python code/01_build/14_window_measures.py  # trailing-window measures for the case memo
 python code/01_build/15_ucdp_extension.py   # UCDP extension, 2015-2024
 python code/01_build/16_leverage_measures.py # w5 main tables, continuous leverage, HHI
 
 python code/02_analysis/21_patron_identification.py
-python code/02_analysis/22_patron_confirmation.py   # the declared primary test
 python code/02_analysis/23_region_era.py
 python code/02_analysis/24_escalation_margin.py
 python code/02_analysis/25_substitutability.py

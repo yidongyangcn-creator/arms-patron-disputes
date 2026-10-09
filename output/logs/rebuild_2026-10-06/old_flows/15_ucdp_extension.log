@@ -1,0 +1,15 @@
+UCDP interstate pairs: 58; onsets 2015-2024: 12
+
+(a) UCDP as ALTERNATIVE DV, 1955-2014 (much rarer than MID: >=25 deaths)
+  CW: sd_w5 -> UCDP onset                                  N= 24349 ev=  30  OR=0.704 p=0.565
+  full 1955-2014: sd_w5 -> UCDP onset                      N= 53003 ev=  37  OR=0.650 p=0.462
+
+(b) 2015-2024 extension panel: 14324 dyad-years, 4 onsets, sd_w5 share=9.3%
+  2015-24: sd_w5 -> UCDP onset (lean controls): too few events (4)
+  2015-24: same top supplier: too few events (4)
+
+(c) HHI: 1975=0.275 1990=0.242 2005=0.177 2015=0.179 2023=0.228
+POOLED 1955-2024, UCDP DV: sd_w5 OR=0.732 p=0.490 | x HHI(z) OR=0.992 p=0.982  (N=73407, ev=59)
+   effect at 2015-24 level: OR=0.739
+   effect at mean        : OR=0.732
+   effect at CW level    : OR=0.726

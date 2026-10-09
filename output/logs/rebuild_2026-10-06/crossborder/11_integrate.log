@@ -1,0 +1,56 @@
+=== SUMMARY ===
+{
+  "sipri_schema": "NEW",
+  "sipri_rows_read": 60789,
+  "sipri_mapped_flows": 20323,
+  "sipri_unmatched_names": 0,
+  "sipri_tiv_crossborder": 1555974.0,
+  "sipri_tiv_local": 565861.5,
+  "mid_dyad_pairs": 1046,
+  "mid_onsets_1990_2014": 689,
+  "onsets_with_overlap_data": 369,
+  "panel_rows": 127083,
+  "panel_onset_rate": 0.005421653564992957,
+  "cinc_coverage": 0.9935868684245729,
+  "regime_coverage": 0.9745756710181535
+}
+
+=== YEARLY (head/tail) ===
+ year  mid_dyads  onset_dyads  n_importers  overlap_pairs  onset_with_overlap_data
+ 1990         59           55          104           2332                       47
+ 1991         71           23           95           1898                       20
+ 1992         36           31           90           1552                       21
+ 1993         67           44           86           1595                       16
+ 1994         70           30           95           1995                        9
+ 1995         58           23           96           1773                       10
+ 1996         61           22           98           2040                        7
+ 1997         53           28           95           2142                        6
+ 1998         72           42           96           2073                       20
+ 1999         93           41           99           2085                       10
+ 2000         83           32          102           1877                        6
+ 2001         61           29           96           2012                        9
+ 2002         46           25           96           2023                       12
+ 2003         57           30           91           1776                       15
+ 2004         41           21           99           1743                       14
+ 2005         47           23          102           1866                       11
+ 2006         29            6          102           2265                        3
+ 2007         24            9          104           2156                        6
+ 2008         33           17          103           2134                       10
+ 2009         29            9          110           2693                        5
+ 2010         27           15          113           2651                        9
+ 2011         81           66          114           3080                       54
+ 2012         46           19          116           2803                       14
+ 2013         60           29          112           2805                       19
+ 2014         55           20          111           2729                       16
+
+=== BY REGION ===
+           region  onsets  onsets_with_overlap
+     cross-region     226                  143
+Europe/PostSoviet     127                   48
+     Asia-Pacific     119                   85
+ SubSaharanAfrica      92                   14
+             MENA      91                   66
+         Americas      21                    4
+        S.America      13                    9
+
+Outputs in /tmp/apd_xb/data/derived

@@ -1,0 +1,14 @@
+CLEAN PANEL: 43624 dyad-years, 522 onsets, onset rate 1.197%
+  both-import share: 47.8%; onsets in both-import rows: 293
+
+========================================================================================================
+CLEAN LADDER (unconditional politically-relevant panel)
+========================================================================================================
+1. onset ~ overlap + controls + peace-yrs                N= 37249 on= 461  overlap_lag1 OR=1.098 p=0.729
+2. + both-import indicator (clean extensive margin)      N= 37249 on= 461  overlap_lag1 OR=1.083 p=0.781  both_imp OR=1.02 p=0.871
+3. both-import SUBSAMPLE (clean gradient test)           N= 20222 on= 267  overlap_lag1 OR=1.174 p=0.562
+4. extensive margin alone: onset ~ both_import           N= 37249 on= 461  both_import_lag1 OR=1.032 p=0.767
+
+--- Firth penalized logit (spec 2, hand-rolled) ---
+   overlap_lag1       OR=1.095  p=0.6989
+   both_import_lag1   OR=1.019  p=0.8685
